@@ -7,7 +7,11 @@
     "test": "npm run test:gen && npm run test:jest && npm run test:cleanup",
     "test:cleanup": "rimraf test/docs test/docs2",
     "test:gen": "npm run test:cleanup && typedoc --options test/typedoc.json && typedoc --options test/typedoc2.json",
-    "test:jest": "jest"
+    "test:jest": "jest",
+    "addscope": "node tools/packagejson name @tomchen/typedoc-plugin-not-exported && prettier --write package.json"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "files": [
     "src"
