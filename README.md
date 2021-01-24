@@ -1,6 +1,6 @@
 # typedoc-plugin-not-exported
 
-[![npm package](https://img.shields.io/badge/npm%20i-example--typescript--package-brightgreen)](https://www.npmjs.com/package/typedoc-plugin-not-exported) [![version number](https://img.shields.io/npm/v/typedoc-plugin-not-exported?color=green&label=version)](https://github.com/tomchen/typedoc-plugin-not-exported/releases) [![License](https://img.shields.io/github/license/tomchen/typedoc-plugin-not-exported)](https://github.com/tomchen/typedoc-plugin-not-exported/blob/main/LICENSE)
+[![npm package](https://img.shields.io/badge/npm%20i-typedoc--plugin--not--exported-brightgreen)](https://www.npmjs.com/package/typedoc-plugin-not-exported) [![version number](https://img.shields.io/npm/v/typedoc-plugin-not-exported?color=green&label=version)](https://github.com/tomchen/typedoc-plugin-not-exported/releases) [![License](https://img.shields.io/github/license/tomchen/typedoc-plugin-not-exported)](https://github.com/tomchen/typedoc-plugin-not-exported/blob/main/LICENSE)
 
 This typedoc plugin can force inclusion of specific symbols (variables) that are not exported, by making them fake exports.
 
@@ -61,6 +61,8 @@ typedoc --includeTag internalDoNotUse src/index.ts
 
 That's it.
 
-Originally from [here](https://github.com/TypeStrong/typedoc/issues/1474#issuecomment-766178261). [CC0](LICENSE).
+Originally from [here](https://github.com/TypeStrong/typedoc/issues/1474#issuecomment-766178261).
+
+[CC0](LICENSE).
 
 **Keywords: typedoc plugin force include non exported unexported variable symbol fake export option flag tag mode file exclude inclusion internal external**
