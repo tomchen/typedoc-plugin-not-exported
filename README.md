@@ -2,12 +2,20 @@
 
 [![npm package](https://img.shields.io/badge/npm%20i-typedoc--plugin--not--exported-brightgreen)](https://www.npmjs.com/package/typedoc-plugin-not-exported) [![version number](https://img.shields.io/npm/v/typedoc-plugin-not-exported?color=green&label=version)](https://github.com/tomchen/typedoc-plugin-not-exported/releases) [![License](https://img.shields.io/github/license/tomchen/typedoc-plugin-not-exported)](https://github.com/tomchen/typedoc-plugin-not-exported/blob/main/LICENSE)
 
-This typedoc plugin can force inclusion of specific symbols (variables) that are not exported, by making them fake exports.
+This [TypeDoc](https://typedoc.org/) plugin can force inclusion of specific symbols (variables) that are not exported, by making them fake exports.
 
-Install the plugin:
+## Usage
+
+Install the plugin with [npm](https://www.npmjs.com/):
 
 ```bash
-npm i typedoc-plugin-not-exported
+npm i -D typedoc-plugin-not-exported
+```
+
+Or if you use [yarn](https://yarnpkg.com/):
+
+```bash
+yarn add -D typedoc-plugin-not-exported
 ```
 
 In your code, tag the symbols (variables / types / interfaces / classes etc.) that are not exported but you still want to include in the generated documentation.
@@ -61,8 +69,18 @@ typedoc --includeTag internalDoNotUse src/index.ts
 
 That's it.
 
+## Links, Tips & Others
+
 Originally from [here](https://github.com/TypeStrong/typedoc/issues/1474#issuecomment-766178261).
 
 [CC0](LICENSE).
 
-**Keywords: typedoc plugin force include non exported unexported variable symbol fake export option flag tag mode file exclude inclusion internal external**
+TypeDoc converts comments in TypeScript source code into rendered HTML documentation. See [Guides](https://typedoc.org/guides/installation/), [API](https://typedoc.org/api/) & [repo](https://github.com/TypeStrong/typedoc).
+
+TypeDoc loads all plugins by default, if you want to specify plugins to load, use [`--plugin`](https://typedoc.org/guides/options/#plugin) flag.
+
+Those non-exported symbols (variables) you want to include in the doc, are not public and the [`@public`](https://tsdoc.org/pages/tags/public/) tag shouldn't be applied. TypeDoc's `@internal` tag and [typedoc-plugin-internal-external](https://github.com/christopherthielen/typedoc-plugin-internal-external)'s `@internal` and `@external` are not made to solve the problem in question.
+
+Nevertheless, if you want to include a symbol (variable) in the documentation, you should usually export it.
+
+**Keywords: typedoc plugin force include non exported unexported variable symbol member fake export option flag tag mode file exclude inclusion internal external**
