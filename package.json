@@ -1,0 +1,38 @@
+{
+  "name": "typedoc-plugin-not-exported",
+  "version": "0.1.0",
+  "description": "TypeDoc plugin that forces inclusion of non-exported symbols (variables)",
+  "main": "src/main.js",
+  "scripts": {},
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "typedocplugin",
+    "typedoc",
+    "plugin",
+    "exported",
+    "nonexported",
+    "include",
+    "plugin"
+  ],
+  "author": "Tom Chen <tomchen.org@gmail.com>",
+  "license": "CC0",
+  "homepage": "https://github.com/tomchen/typedoc-plugin-not-exported",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tomchen/typedoc-plugin-not-exported.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tomchen/typedoc-plugin-not-exported/issues"
+  },
+  "peerDependencies": {
+    "typedoc": ">=0.20.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  }
+}
