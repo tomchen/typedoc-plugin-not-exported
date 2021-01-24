@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-not-exported",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "TypeDoc plugin that forces inclusion of non-exported symbols (variables)",
   "main": "src/main.js",
   "scripts": {
