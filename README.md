@@ -4,6 +4,8 @@
 
 This [TypeDoc](https://typedoc.org/) plugin can force inclusion of specific symbols (variables) that are not exported, by making them fake exports.
 
+(Requires TypeDoc ≥ v0.20.16 (2021-01-17))
+
 ## Usage
 
 Install the plugin with [npm](https://www.npmjs.com/):
@@ -66,8 +68,6 @@ Or, if you are using `@internalDoNotUse` tag instead of `@notExported`, run:
 ```bash
 typedoc --includeTag internalDoNotUse src/index.ts
 ```
-
-That's it.
 
 ## Links, Tips & Others
 

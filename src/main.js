@@ -8,7 +8,7 @@
 
 //@ts-check
 
-const { Converter, TypeScript } = require('typedoc') // version 0.20.x
+const { Converter, TypeScript } = require('typedoc') // version 0.20.16+
 
 const ModuleFlags =
   TypeScript.SymbolFlags.ValueModule | TypeScript.SymbolFlags.NamespaceModule

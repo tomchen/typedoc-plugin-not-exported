@@ -1,0 +1,8 @@
+{
+  "entryPoints": ["test/index2.ts"],
+  "tsconfig": "test/tsconfig.json",
+  "out": "test/docs2",
+  "readme": "none",
+  "plugin": "./src/main.js",
+  "includeTag": "internalDoNotUse"
+}
