@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  build:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 4
@@ -30,5 +30,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install modules
         run: yarn
+      - name: Build
+        run: yarn build
       - name: Run tests
         run: yarn test

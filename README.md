@@ -1,12 +1,12 @@
 # typedoc-plugin-not-exported
 
-[![npm package](https://img.shields.io/badge/npm%20i-typedoc--plugin--not--exported-brightgreen)](https://www.npmjs.com/package/typedoc-plugin-not-exported) [![version number](https://img.shields.io/npm/v/typedoc-plugin-not-exported?color=green&label=version)](https://github.com/tomchen/typedoc-plugin-not-exported/releases) [![Actions Status](https://github.com/tomchen/typedoc-plugin-not-exported/workflows/Test/badge.svg)](https://github.com/tomchen/typedoc-plugin-not-exported/actions) [![License](https://img.shields.io/github/license/tomchen/typedoc-plugin-not-exported)](https://github.com/tomchen/typedoc-plugin-not-exported/blob/main/LICENSE)
+[![npm package](https://img.shields.io/badge/npm%20i%20--D-typedoc--plugin--not--exported-brightgreen)](https://www.npmjs.com/package/typedoc-plugin-not-exported) [![version number](https://img.shields.io/npm/v/typedoc-plugin-not-exported?color=green&label=version)](https://github.com/tomchen/typedoc-plugin-not-exported/releases) [![Actions Status](https://github.com/tomchen/typedoc-plugin-not-exported/workflows/Test/badge.svg)](https://github.com/tomchen/typedoc-plugin-not-exported/actions) [![License](https://img.shields.io/github/license/tomchen/typedoc-plugin-not-exported)](https://github.com/tomchen/typedoc-plugin-not-exported/blob/main/LICENSE)
 
 This [TypeDoc](https://typedoc.org/) plugin can force inclusion of specific symbols (variables) that are not exported, by making them fake exports.
 
-(Requires TypeDoc ≥ v0.20.16 (2021-01-17))
-
 ## Usage
+
+(Assuming you have already installed TypeDoc (`npm i -D typedoc`) of [version](https://www.npmjs.com/package/typedoc?activeTab=versions) **equal to or greater than v0.20.16** (released on 2021-01-17, this is the minimum required by this plugin. If you need to update the version, change TypeDoc's version number in package.json and rerun `npm i` / `yarn`))
 
 Install the plugin with [npm](https://www.npmjs.com/):
 
@@ -14,7 +14,7 @@ Install the plugin with [npm](https://www.npmjs.com/):
 npm i -D typedoc-plugin-not-exported
 ```
 
-Or if you use [yarn](https://yarnpkg.com/):
+Or with [yarn](https://yarnpkg.com/):
 
 ```bash
 yarn add -D typedoc-plugin-not-exported

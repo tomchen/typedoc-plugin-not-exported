@@ -2,8 +2,9 @@
   "name": "typedoc-plugin-not-exported",
   "version": "0.1.2",
   "description": "TypeDoc plugin that forces inclusion of non-exported symbols (variables)",
-  "main": "src/main.js",
+  "main": "dist/main.js",
   "scripts": {
+    "build": "rimraf dist && tsc",
     "test": "npm run test:gen && npm run test:jest && npm run test:cleanup",
     "test:cleanup": "rimraf test/docs test/docs2",
     "test:gen": "npm run test:cleanup && typedoc --options test/typedoc.json && typedoc --options test/typedoc2.json",
@@ -20,8 +21,10 @@
     "typedocplugin",
     "typedoc",
     "plugin",
-    "exported",
-    "nonexported",
+    "doc",
+    "docs",
+    "typescript",
+    "export",
     "include"
   ],
   "author": "Tom Chen <tomchen.org@gmail.com>",
@@ -38,6 +41,9 @@
     "typedoc": ">=0.20.16"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
     "cheerio": "^1.0.0-rc.5",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.2.0",

@@ -3,5 +3,5 @@
   "tsconfig": "test/tsconfig.json",
   "out": "test/docs",
   "readme": "none",
-  "plugin": "./src/main.js"
+  "plugin": "./dist/main.js"
 }

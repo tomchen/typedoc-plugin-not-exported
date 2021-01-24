@@ -3,6 +3,6 @@
   "tsconfig": "test/tsconfig.json",
   "out": "test/docs2",
   "readme": "none",
-  "plugin": "./src/main.js",
+  "plugin": "./dist/main.js",
   "includeTag": "internalDoNotUse"
 }

@@ -6,15 +6,18 @@
  * CC0
  */
 
-//@ts-check
-
-const { Converter, TypeScript } = require('typedoc') // version 0.20.16+
+import {
+  Converter,
+  TypeScript,
+  Application,
+  DeclarationReflection,
+} from 'typedoc' // version 0.20.16+
+import { Context } from 'typedoc/dist/lib/converter/context' // version 0.20.16+
 
 const ModuleFlags =
   TypeScript.SymbolFlags.ValueModule | TypeScript.SymbolFlags.NamespaceModule
 
-/** @param {{ application: import("typedoc").Application }} param0 */
-exports.load = function ({ application }) {
+exports.load = function ({ application }: { application: Application }) {
   let includeTag = 'notExported'
 
   application.options.addDeclaration({
@@ -25,7 +28,10 @@ exports.load = function ({ application }) {
   })
 
   application.converter.on(Converter.EVENT_BEGIN, () => {
-    includeTag = application.options.getValue('includeTag').toLocaleLowerCase()
+    const includeTagTemp = application.options.getValue('includeTag')
+    if (typeof includeTagTemp === 'string') {
+      includeTag = includeTagTemp.toLocaleLowerCase()
+    }
   })
 
   application.converter.on(
@@ -33,22 +39,17 @@ exports.load = function ({ application }) {
     lookForFakeExports
   )
 
-  /**
-   * @param {import("typedoc/dist/lib/converter/context").Context} context
-   * @param {import("typedoc").DeclarationReflection} _reflection
-   * @param {TypeScript.Node | undefined} node
-   */
-  function lookForFakeExports(context, _reflection, node) {
+  function lookForFakeExports(
+    context: Context,
+    _reflection: DeclarationReflection,
+    node: (TypeScript.Node & { symbol?: TypeScript.Symbol }) | undefined
+  ) {
     if (!node) {
       return
     }
 
-    /** @type {TypeScript.Symbol | undefined} */
-    const moduleSymbolTemp = context.checker.getSymbolAtLocation(node)
-    const moduleSymbol =
-      moduleSymbolTemp !== null && moduleSymbolTemp !== undefined
-        ? moduleSymbolTemp
-        : /** @type {any} */ node.symbol
+    const moduleSymbol: TypeScript.Symbol | undefined =
+      context.checker.getSymbolAtLocation(node) ?? node.symbol
 
     if (!moduleSymbol) {
       // Global file, no point in doing anything here. TypeDoc will already
