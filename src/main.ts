@@ -66,7 +66,11 @@ exports.load = function ({ application }: { application: Application }) {
 
     const symbols = context.checker
       .getSymbolsInScope(node, TypeScript.SymbolFlags.ModuleMember)
-      .filter((symbol) => !exportedSymbols.includes(symbol))
+      .filter(
+        (symbol) =>
+          symbol.getDeclarations()?.some((d) => d.parent === node) &&
+          !exportedSymbols.includes(symbol)
+      )
 
     for (const symbol of symbols) {
       if (
