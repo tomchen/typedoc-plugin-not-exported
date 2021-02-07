@@ -12,7 +12,7 @@ import {
   Application,
   DeclarationReflection,
 } from 'typedoc' // version 0.20.16+
-import { Context } from 'typedoc/dist/lib/converter/context' // version 0.20.16+
+import { Context } from 'typedoc/dist/lib/converter/context'
 
 const ModuleFlags =
   TypeScript.SymbolFlags.ValueModule | TypeScript.SymbolFlags.NamespaceModule

@@ -20,7 +20,7 @@ Or with [yarn](https://yarnpkg.com/):
 yarn add -D typedoc-plugin-not-exported
 ```
 
-In your code, tag the symbols (variables / types / interfaces / classes etc.) that are not exported but you still want to include in the generated documentation.
+In your code, tag the symbols (i.e. variables / types / interfaces / classes / object properties / class members etc.) that are not exported but you still want to include in the generated documentation.
 
 The default tag is `@notExported`.
 

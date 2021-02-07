@@ -1,5 +1,5 @@
-const cheerio = require('cheerio')
-const fs = require('fs')
+import * as cheerio from 'cheerio'
+import * as fs from 'fs'
 
 const $ = cheerio.load(fs.readFileSync('./test/docs2/index.html'))
 
