@@ -15,7 +15,7 @@
     "access": "public"
   },
   "files": [
-    "src"
+    "dist"
   ],
   "keywords": [
     "typedocplugin",
