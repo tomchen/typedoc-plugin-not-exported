@@ -93,8 +93,8 @@ function isInDocumentableScope(symbol: TypeScript.Symbol, node: TypeScript.Node)
     // We need to check isSourceFile here as well because otherwise it will be picked up
     // in the scope of namespaces while we should be picking it up only in the first case
     if (
-      ts.isSourceFile(node) &&
-      ts.isModuleBlock(decl.parent) &&
+      TypeScript.isSourceFile(node) &&
+      TypeScript.isModuleBlock(decl.parent) &&
       decl.parent.parent.name.getText() === "global"
     ) {
       return true
