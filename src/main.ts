@@ -84,7 +84,10 @@ exports.load = function ({ application }: { application: Application }) {
   }
 }
 
-function isInDocumentableScope(symbol: TypeScript.Symbol, node: TypeScript.Node) {
+function isInDocumentableScope(
+  symbol: TypeScript.Symbol,
+  node: TypeScript.Node
+) {
   for (const decl of symbol.getDeclarations() || []) {
     // Case 1: Included in this namespace/source file
     if (decl.parent === node) return true
@@ -95,7 +98,7 @@ function isInDocumentableScope(symbol: TypeScript.Symbol, node: TypeScript.Node)
     if (
       TypeScript.isSourceFile(node) &&
       TypeScript.isModuleBlock(decl.parent) &&
-      decl.parent.parent.name.getText() === "global"
+      decl.parent.parent.name.getText() === 'global'
     ) {
       return true
     }
@@ -103,4 +106,3 @@ function isInDocumentableScope(symbol: TypeScript.Symbol, node: TypeScript.Node)
 
   return false
 }
-

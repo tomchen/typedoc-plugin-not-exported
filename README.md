@@ -31,12 +31,12 @@ Example 1:
  * My class
  * @notExported
  */
-class Cls {
+class MyClass {
   convert(str: string): string {
     return str
   }
 }
-export const me = new Cls()
+export const me = new MyClass()
 ```
 
 Example 2:
@@ -52,7 +52,7 @@ type twoNumbers = [number, number]
 type threeNumbers = [number, number, number]
 
 export type twoOrThreeNumbers = twoNumbers | threeNumbers
-export function sum2(ns: twoOrThreeNumbers): number {
+export function sum(ns: twoOrThreeNumbers): number {
   return ns.reduce((a, b) => a + b)
 }
 ```
