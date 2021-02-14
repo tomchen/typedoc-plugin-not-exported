@@ -68,7 +68,7 @@ exports.load = function ({ application }: { application: Application }) {
       .getSymbolsInScope(node, TypeScript.SymbolFlags.ModuleMember)
       .filter(
         (symbol) =>
-          symbol.getDeclarations()?.some((d) => d.parent === node) &&
+          isInDocumentableScope(symbol, node) &&
           !exportedSymbols.includes(symbol)
       )
 
@@ -83,3 +83,24 @@ exports.load = function ({ application }: { application: Application }) {
     }
   }
 }
+
+function isInDocumentableScope(symbol: TypeScript.Symbol, node: TypeScript.Node) {
+  for (const decl of symbol.getDeclarations() || []) {
+    // Case 1: Included in this namespace/source file
+    if (decl.parent === node) return true
+
+    // Case 2: Within `declare global {}`
+    // We need to check isSourceFile here as well because otherwise it will be picked up
+    // in the scope of namespaces while we should be picking it up only in the first case
+    if (
+      TypeScript.isSourceFile(node) &&
+      TypeScript.isModuleBlock(decl.parent) &&
+      decl.parent.parent.name.getText() === "global"
+    ) {
+      return true
+    }
+  }
+
+  return false
+}
+
