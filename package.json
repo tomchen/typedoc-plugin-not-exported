@@ -38,7 +38,7 @@
     "url": "https://github.com/tomchen/typedoc-plugin-not-exported/issues"
   },
   "peerDependencies": {
-    "typedoc": ">=0.20.16"
+    "typedoc": ">=0.22.17"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
@@ -53,7 +53,7 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.1",
     "ts-loader": "^8.0.17",
-    "typedoc": "0.20.24",
-    "typescript": "^4.1.5"
+    "typedoc": "0.22.17",
+    "typescript": "^4.7.4"
   }
 }

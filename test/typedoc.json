@@ -1,7 +1,7 @@
 {
-  "entryPoints": ["test/index.ts"],
-  "tsconfig": "test/tsconfig.json",
+  "entryPoints": ["index.ts"],
+  "tsconfig": "tsconfig.json",
   "out": "test/docs",
   "readme": "none",
-  "plugin": "./dist/main.js"
+  "plugin": "../dist/main.js"
 }
