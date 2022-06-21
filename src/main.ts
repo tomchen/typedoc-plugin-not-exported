@@ -17,7 +17,7 @@ import { Context } from 'typedoc/dist/lib/converter/context'
 const ModuleFlags =
   TypeScript.SymbolFlags.ValueModule | TypeScript.SymbolFlags.NamespaceModule
 
-exports.load = function ({ application }: { application: Application }) {
+exports.load = function (application: Application) {
   let includeTag = 'notExported'
 
   application.options.addDeclaration({
